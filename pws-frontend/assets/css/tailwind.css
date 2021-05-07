@@ -3,5 +3,36 @@
 @tailwind utilities;
 
 @layer components {
-    
+
+    .container {
+        @apply flex items-center justify-center;
+    }
+
+    label {
+        @apply text-orange-600 text-sm font-thin p-0 m-0;
+    }
+
+    /* Inputs */
+    input {
+        @apply px-4 py-1 rounded-md border-2 border-orange-200 focus:border-orange-500 focus:outline-none;
+    }
+      
+    .input-section {
+        @apply flex flex-col space-y-1;
+    }
+
+    /* buttons */
+    .btn {
+        @apply px-4 py-1 rounded-md font-bold border-2 border-transparent outline-none;
+    }
+
+    .btn--primary {
+        @apply btn bg-orange-600 text-white;
+        @apply hover:bg-orange-700 shadow-md;
+    }
+
+    .btn--secondary {
+        @apply btn  bg-orange-200 border-orange-600;
+    }
+
 }
