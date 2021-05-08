@@ -28,9 +28,7 @@
         </form>
       </div>
       <!-- Footer -->
-      <footer
-        class="min-w-full h-12 container bg-orange-600 text-white font-thin"
-      >
+      <footer class="min-w-full h-12 bg-orange-600 text-white font-thin">
         <p>Copyrights reserved &copy; 2021.</p>
       </footer>
     </div>
