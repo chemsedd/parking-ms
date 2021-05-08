@@ -1,9 +1,7 @@
 <template>
-  <div class="w-screen min-h-screen">
-    <div>
-      <h1>Sidebar</h1>
-    </div>
-    <Nuxt />
+  <div class="w-screen min-h-screen flex">
+    <SideBar />
+    <div class="w-full bg-gray-100 p-4"><Nuxt /></div>
   </div>
 </template>
 
