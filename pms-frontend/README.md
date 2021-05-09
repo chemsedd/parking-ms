@@ -1,20 +1,17 @@
-# pws-frontend
+# **Parking Management System**
 
-## Build Setup
+PMS is a web solution for parking management problems.
 
-```bash
-# install dependencies
-$ npm install
+## **Sections**
+PMS is divided into the following sections:
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+1. **Login Page**: for users/admins to login. It provides 2 input fields (Username & Password). The user also has the possibility to revocer his lost password or username through his email.
+   
+2. **Dashboard**: after login, the user/admin lands on the main dashboard of the system. The main dashboard provides general statistics and analytics about parking lots.
+   - Available parking lots (Total, Empty, Full).
+   - Brief history of today's clients (tickets given, time and where parked).
 
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+3. **Sidebar**: displays brief user/admin infos and provides access to other sections of the system.
+   1. Username and profile picture.
+   2. Status (user, admin)
+   3. Disconnect.
