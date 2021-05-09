@@ -23,7 +23,10 @@ export default {
   plugins: [{ src: "~/plugins/vue-awesome.js" }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: [
+    "~/components",
+    { path: "~/components/dashboard", prefix: "db" }
+  ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: ["@nuxtjs/tailwindcss"],

@@ -1,11 +1,9 @@
 <template>
   <div :class="`${toggle ? 'w-80' : 'w-28'} sidebar`">
-    <button
-      class="flex items-center justify-center rounded-md absolute top-2 -right-10 w-8 h-8 bg-light-blue-900"
-      @click="toggle = !toggle"
-    >
+    <button class="btn-sm toggle-btn" @click="toggle = !toggle">
       <v-icon name="angle-right" class="w-4 h-4 text-cyan-700" />
     </button>
+    <!-- User infos (picture, name...) -->
     <div class="user-section">
       <img
         src="~/assets/images/user.jpg"
@@ -16,7 +14,8 @@
         Chems Eddine Senoussi
       </h3>
     </div>
-    <ul class="flex flex-col gap-y-2 text-white">
+    <!-- Menu section -->
+    <ul class="menu-section">
       <li v-for="(icon, label) in menu" :key="label">
         <button
           class="btn w-full h-16 flex items-center space-x-2 text-xl bg-cyan-700 hover:bg-cyan-500 shadow-md"
@@ -51,10 +50,15 @@ export default {
 </script>
 
 <style>
+/* Toggle sidebar button */
+.toggle-btn {
+  @apply absolute top-2 -right-10 w-8 h-8 bg-light-blue-900;
+}
+
 /* Sidebar */
 
 .sidebar {
-  @apply h-screen flex flex-col justify-between space-y-4 bg-light-blue-900 p-4 relative;
+  @apply h-screen flex flex-col justify-between space-y-4 bg-light-blue-900 shadow-md p-4 relative;
   transition: width 0.2s linear 0s;
 }
 
@@ -70,5 +74,9 @@ export default {
 
 .user-section .user-name {
   @apply text-white text-lg font-bold;
+}
+
+.menu-section {
+  @apply flex flex-col justify-start gap-y-2 h-full text-white;
 }
 </style>
