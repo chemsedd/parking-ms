@@ -8,7 +8,7 @@
       />
     </button>
     <!-- Title -->
-    <div class="title-section">
+    <div :class="`title-section ${toggle ? 'flex-row' : 'flex-col'}`">
       <img
         class="w-12 h-12"
         src="~/assets/images/pms-logo.svg"
@@ -16,37 +16,47 @@
       />
       <h1 class="title">PMS</h1>
     </div>
-    <hr class="border-light-orange opacity-50 w-1/2 mx-auto" />
+    <hr class="sidebar-hr" />
     <!-- User infos (picture, name...) -->
     <div class="user-section">
       <img
         src="~/assets/images/user.jpg"
         alt="User image"
-        :class="`${toggle ? 'w-20 h-20' : 'w-10 h-10'} user-image`"
+        :class="`${toggle ? 'w-16 h-16' : 'w-12 h-12'} user-image`"
       />
-      <span :class="`${toggle ? 'block' : 'hidden'} user-name`">
-        Chems Eddine Senoussi
-      </span>
+      <div :class="`${toggle ? 'block' : 'hidden'} flex flex-col`">
+        <span class="user-name"> Chems Eddine Senoussi </span>
+        <span class="text-green-700 text-sm">◉ Admin</span>
+      </div>
     </div>
+    <hr class="sidebar-hr" />
     <!-- Menu section -->
     <ul class="menu-section">
       <li v-for="(icon, label) in menu" :key="label">
-        <button class="btn sidebar-menu-btn">
+        <button
+          :class="`btn sidebar-menu-btn ${
+            label == 'Home' ? 'bg-light-orange' : ''
+          }`"
+        >
           <v-icon :name="icon" class="w-5 h-5" />
-          <span :class="`${toggle ? 'block' : 'hidden'}`">{{
-            label | capitalize
-          }}</span>
+          <span :class="`${toggle ? 'block' : 'hidden'}`">{{ label }}</span>
         </button>
       </li>
     </ul>
     <div class="grid grid-cols-3 gap-2">
-      <button class="btn flex place-content-center bg-red-500 text-white">
+      <button
+        class="btn flex place-content-center hover:border-2 hover:border-light-orange text-light-orange"
+      >
         <v-icon name="power-off" class="w-5 h-6" />
       </button>
-      <button class="btn flex place-content-center bg-red-500 text-white">
+      <button
+        class="btn flex place-content-center hover:border-2 hover:border-light-orange text-light-orange"
+      >
         <v-icon name="power-off" class="w-5 h-6" />
       </button>
-      <button class="btn flex place-content-center bg-red-500 text-white">
+      <button
+        class="btn flex place-content-center hover:border-2 hover:border-light-orange text-light-orange"
+      >
         <v-icon name="power-off" class="w-5 h-6" />
       </button>
     </div>
@@ -59,9 +69,9 @@ export default {
     return {
       toggle: true,
       menu: {
-        home: "home",
-        statistics: "table",
-        settings: "cogs",
+        Home: "home",
+        Statistics: "table",
+        Settings: "cogs",
       },
     };
   },
@@ -75,15 +85,19 @@ export default {
 }
 
 /* Sidebar */
-/* bg-gradient-to-tr from-light-blue-900 to-light-blue-700 */
 .sidebar {
-  @apply h-screen flex flex-col justify-between space-y-4 bg-dark-blue shadow-lg p-4 relative;
+  @apply h-screen flex flex-col justify-between space-y-4 bg-dark-blue shadow-lg px-4 py-2 relative;
   transition: width 0.2s linear 0s;
+}
+
+.sidebar-hr {
+  @apply border-light-orange border-dashed opacity-50 w-10/12 mx-auto;
+  opacity: 45%;
 }
 
 /* Title section */
 .title-section {
-  @apply flex flex-col items-center justify-center gap-2;
+  @apply flex items-center justify-center gap-2;
 }
 
 .title {
@@ -93,7 +107,7 @@ export default {
 /* User infos */
 
 .user-section {
-  @apply flex flex-col items-center gap-y-2;
+  @apply flex items-center gap-x-2 px-4;
 }
 
 .user-section .user-image {
@@ -101,7 +115,7 @@ export default {
 }
 
 .user-section .user-name {
-  @apply text-gray-300 font-light text-sm;
+  @apply text-gray-300 font-semibold text-sm;
 }
 
 .menu-section {
