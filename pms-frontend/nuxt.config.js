@@ -25,7 +25,8 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: [
     "~/components",
-    { path: "~/components/dashboard", prefix: "db" }
+    { path: "~/components/dashboard", prefix: "db" },
+    { path: "~/components/charts", prefix: "c" }
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules

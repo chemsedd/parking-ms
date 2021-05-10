@@ -1,5 +1,5 @@
 <template>
-  <div class="card bg-white border-red-600">
+  <card class="border-light-orange">
     <header class="inline-flex gap-x-2">
       <v-icon name="car" class="w-5 h-auto text-orange-500" />
       <h3>Parking Lots</h3>
@@ -13,7 +13,7 @@
       <dt>Empty lots:</dt>
       <dd class="text-green-600">75</dd>
     </dl>
-  </div>
+  </card>
 </template>
 
 <script>
@@ -21,10 +21,6 @@ export default {};
 </script>
 
 <style scoped>
-.card {
-  @apply flex flex-col gap-y-2 rounded-xl shadow-md px-6 py-4 border-b-4;
-}
-
 dl {
   @apply grid grid-cols-2;
 }

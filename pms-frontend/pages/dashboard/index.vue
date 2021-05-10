@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col gap-4">
-    <header class="title-section">
+    <header class="header-section">
       <h2>Parking lots statistics</h2>
       <div
         class="inline-flex gap-x-6 items-center bg-gradient-to-bl from-pink-400 to-orange-600 rounded-md shadow-md px-4 py-2 text-bold text-white"
@@ -16,9 +16,9 @@
       </div>
     </header>
     <main class="main-section">
-      <db-card />
-      <db-card />
-      <db-card />
+      <db-lots-card />
+      <db-lots-card />
+      <db-lots-card />
     </main>
   </div>
 </template>
@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style>
-.title-section {
+.header-section {
   @apply inline-flex justify-between items-center;
 }
 
