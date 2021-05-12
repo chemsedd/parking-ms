@@ -20,13 +20,16 @@ export default {
   css: ["@/assets/css/tailwind.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: "~/plugins/vue-awesome.js" }],
+  plugins: [
+    { src: "~/plugins/vue-awesome.js" },
+    { src: "~/plugins/vue-table.js" }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: [
     "~/components",
     { path: "~/components/dashboard", prefix: "db" },
-    { path: "~/components/charts", prefix: "c" }
+    { path: "~/components/dashboard/charts", prefix: "c" }
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -43,6 +46,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: [/^vue-awesome/]
+    transpile: [/^vue-awesome/],
+    babel: {
+      plugins: [["@babel/plugin-proposal-private-methods", { loose: true }]]
+    }
   }
 };

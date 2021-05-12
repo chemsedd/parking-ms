@@ -1,8 +1,8 @@
 <template>
   <card class="border-light-orange">
-    <header class="inline-flex gap-x-2">
-      <v-icon name="car" class="w-5 h-auto text-orange-500" />
+    <header class="inline-flex justify-between gap-x-4">
       <h3>Parking Lots</h3>
+      <v-icon name="car" class="w-5 h-auto text-orange-500" />
     </header>
     <hr />
     <dl>

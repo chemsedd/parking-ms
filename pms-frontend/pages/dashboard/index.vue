@@ -1,58 +1,39 @@
 <template>
-  <div class="flex flex-col gap-4">
-    <header class="header-section">
-      <h2>Parking lots statistics</h2>
-      <div
-        class="inline-flex gap-x-6 items-center bg-gradient-to-bl from-pink-400 to-orange-600 rounded-md shadow-md px-4 py-2 text-bold text-white"
-      >
-        <span>
-          <v-icon name="calendar-alt" class="w-4 h-4" />
-          {{ now }}</span
-        >
-        <span>
-          <v-icon name="clock" class="w-4 h-4" />
-          {{ today }}</span
-        >
-      </div>
-    </header>
-    <main class="main-section">
+  <main class="main-section">
+    <div class="secondary-section">
+      <h3 class="col-span-3">Charts</h3>
       <db-lots-card />
       <db-lots-card />
       <db-lots-card />
-    </main>
-  </div>
+    </div>
+    <div class="secondary-section">
+      <h3 class="col-span-3">Charts</h3>
+      <CClientsBar />
+      <CLotsDoughnut />
+    </div>
+  </main>
 </template>
 
 <script>
 export default {
+  head() {
+    return {
+      title: "Index",
+    };
+  },
   layout: "dashboard",
-  computed: {
-    today() {
-      var today = new Date();
-      return (
-        today.getFullYear() +
-        "-" +
-        (today.getMonth() + 1) +
-        "-" +
-        today.getDate()
-      );
-    },
-    now() {
-      var today = new Date();
-      return (
-        today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
-      );
-    },
+  data() {
+    return {};
   },
 };
 </script>
 
 <style>
-.header-section {
-  @apply inline-flex justify-between items-center;
+.main-section {
+  @apply flex flex-col gap-8;
 }
 
-.main-section {
-  @apply grid grid-cols-3 gap-2 w-full;
+.secondary-section {
+  @apply grid grid-cols-3 gap-x-6 gap-y-3 w-full;
 }
 </style>
