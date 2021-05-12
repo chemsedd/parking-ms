@@ -5,11 +5,7 @@
       <db-lots-card />
       <db-lots-card />
       <db-lots-card />
-    </div>
-    <div class="secondary-section">
-      <h3 class="col-span-3">Charts</h3>
-      <CClientsBar />
-      <CLotsDoughnut />
+      <hr class="col-span-3" />
     </div>
   </main>
 </template>
@@ -29,11 +25,4 @@ export default {
 </script>
 
 <style>
-.main-section {
-  @apply flex flex-col gap-8;
-}
-
-.secondary-section {
-  @apply grid grid-cols-3 gap-x-6 gap-y-3 w-full;
-}
 </style>

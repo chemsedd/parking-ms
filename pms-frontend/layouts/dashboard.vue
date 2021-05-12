@@ -58,4 +58,12 @@ export default {
 .header-section {
   @apply inline-flex justify-between items-center w-full;
 }
+
+.main-section {
+  @apply flex flex-col gap-8;
+}
+
+.secondary-section {
+  @apply grid grid-cols-3 gap-x-6 gap-y-3 w-full;
+}
 </style>

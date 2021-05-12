@@ -1,5 +1,5 @@
 <template>
-  <div :class="`${toggle ? 'w-80' : 'w-28'} sidebar`">
+  <div :class="`${toggle ? 'w-80' : 'w-24'} sidebar`">
     <!-- Toggle sidebar -->
     <button class="btn-sm toggle-btn" @click="toggle = !toggle">
       <v-icon
@@ -14,16 +14,12 @@
         src="~/assets/images/pms-logo.svg"
         alt="Parmking Management System logo"
       />
-      <h1 class="title">PMS</h1>
+      <h1 :class="`title ${toggle ? '' : 'text-3xl'}`">PMS</h1>
     </div>
     <hr class="sidebar-hr" />
     <!-- User infos (picture, name...) -->
     <div class="user-section">
-      <img
-        src="~/assets/images/user.jpg"
-        alt="User image"
-        :class="`${toggle ? 'w-16 h-16' : 'w-12 h-12'} user-image`"
-      />
+      <img src="~/assets/images/user.jpg" alt="User image" class="user-image" />
       <div :class="`${toggle ? 'block' : 'hidden'} flex flex-col`">
         <span class="user-name"> Chems Eddine Senoussi </span>
         <span class="text-green-700 text-sm">◉ Admin</span>
@@ -32,28 +28,20 @@
     <hr class="sidebar-hr" />
     <!-- Menu section -->
     <ul class="menu-section">
-      <li v-for="(icon, label) in menu" :key="label">
-        <button
-          :class="`btn sidebar-menu-btn ${
-            label == 'Home' ? 'bg-light-orange' : ''
-          }`"
+      <li v-for="item in menu" :key="item.label">
+        <nuxt-link
+          :to="{ path: item.link }"
+          class="btn sidebar-menu-btn"
+          append
         >
-          <v-icon :name="icon" class="w-5 h-5" />
-          <span :class="`${toggle ? 'block' : 'hidden'}`">{{ label }}</span>
-        </button>
+          <v-icon :name="item.icon" class="w-5 h-5" />
+          <span :class="`${toggle ? 'block' : 'hidden'}`">{{
+            item.label
+          }}</span>
+        </nuxt-link>
       </li>
     </ul>
     <div class="grid grid-cols-3 gap-2">
-      <button
-        class="btn flex place-content-center hover:border-2 hover:border-light-orange text-light-orange"
-      >
-        <v-icon name="power-off" class="w-5 h-6" />
-      </button>
-      <button
-        class="btn flex place-content-center hover:border-2 hover:border-light-orange text-light-orange"
-      >
-        <v-icon name="power-off" class="w-5 h-6" />
-      </button>
       <button
         class="btn flex place-content-center hover:border-2 hover:border-light-orange text-light-orange"
       >
@@ -68,11 +56,23 @@ export default {
   data() {
     return {
       toggle: true,
-      menu: {
-        Home: "home",
-        Statistics: "table",
-        Settings: "cogs",
-      },
+      menu: [
+        {
+          label: "Home",
+          icon: "home",
+          link: "/dashboard/home",
+        },
+        {
+          label: "Statistics",
+          icon: "table",
+          link: "/dashboard/statistics",
+        },
+        {
+          label: "Settings",
+          icon: "cogs",
+          link: "/dashboard/settings",
+        },
+      ],
     };
   },
 };
@@ -91,8 +91,12 @@ export default {
 }
 
 .sidebar-hr {
-  @apply border-light-orange border-dashed opacity-50 w-10/12 mx-auto;
+  @apply border-light-orange border-dashed opacity-50 w-full;
   opacity: 45%;
+}
+
+.nuxt-link-active {
+  @apply bg-light-orange;
 }
 
 /* Title section */
@@ -107,11 +111,11 @@ export default {
 /* User infos */
 
 .user-section {
-  @apply flex items-center gap-x-2 px-4;
+  @apply flex items-center gap-x-2;
 }
 
 .user-section .user-image {
-  @apply object-cover rounded-md shadow-md;
+  @apply w-16 h-16 object-cover rounded-md shadow-md;
 }
 
 .user-section .user-name {
@@ -123,6 +127,6 @@ export default {
 }
 
 .sidebar-menu-btn {
-  @apply w-full h-10 flex items-center space-x-2 text-xl hover:bg-light-orange;
+  @apply w-full h-10 flex items-center gap-x-2 text-xl hover:bg-light-orange;
 }
 </style>

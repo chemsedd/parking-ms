@@ -1,7 +1,3 @@
 export const state = () => ({});
 
-export const mutations = {
-  increment(state) {
-    state.counter++;
-  }
-};
+export const mutations = {};

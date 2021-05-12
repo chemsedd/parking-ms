@@ -1,12 +1,9 @@
 <template>
-  <vuetable
-    ref="vuetable"
-    api-url="https://vuetable.ratiw.net/api/users"
-    :fields="['name', 'nickname', 'email', 'gender']"
-    data-path=""
-    pagination-path=""
-  >
-  </vuetable>
+  <div class="secondary-section gird-cols-2">
+    <h3 class="col-span-3">Charts</h3>
+    <CClientsBar />
+    <CLotsDoughnut />
+  </div>
 </template>
 
 <script>
