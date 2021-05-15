@@ -68,6 +68,11 @@ export default {
           link: "/dashboard/statistics",
         },
         {
+          label: "Display",
+          icon: "desktop",
+          link: "/dashboard/displays",
+        },
+        {
           label: "Settings",
           icon: "cogs",
           link: "/dashboard/settings",
@@ -81,7 +86,7 @@ export default {
 <style>
 /* Toggle sidebar button */
 .toggle-btn {
-  @apply p-0 flex items-center justify-center absolute top-2 -right-10 w-8 h-8 bg-dark-blue opacity-20 hover:opacity-100;
+  @apply flex items-center justify-center absolute top-2 -right-10 w-8 h-8 border-2 border-transparent bg-dark-blue opacity-20 hover:opacity-100 hover:border-light-orange;
 }
 
 /* Sidebar */

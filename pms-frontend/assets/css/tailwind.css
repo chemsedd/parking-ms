@@ -18,12 +18,12 @@
     }
 
     label {
-        @apply text-orange-600 text-sm font-thin p-0 m-0;
+        @apply text-light-orange text-sm font-thin p-0 m-0;
     }
 
     /* Inputs */
     input {
-        @apply px-4 py-1 rounded-md border-2 border-orange-200 focus:border-orange-500 focus:outline-none;
+        @apply px-4 py-1 rounded-md border-2 border-orange-200 focus:border-light-orange focus:outline-none;
     }
       
     .input-section {
@@ -40,12 +40,12 @@
     }
 
     .btn--primary {
-        @apply btn bg-orange-600 text-white;
-        @apply hover:bg-orange-700 shadow-md;
+        @apply btn bg-light-orange text-white;
+        @apply hover:bg-orange-500 shadow-md;
     }
 
     .btn--secondary {
-        @apply btn  bg-orange-200 border-orange-600;
+        @apply btn  bg-orange-300 border-light-orange;
     }
 
     /* Headers */
@@ -60,6 +60,31 @@
 
     h3 {
         @apply text-xl font-bold text-gray-700;
+    }
+
+    /* Display cards */
+
+    .light-card {
+        @apply bg-white text-dark-blue;
+    }
+
+    .dark-card {
+        @apply bg-dark-blue text-white;
+    }
+
+    .shadow-card {
+        @apply border-b-4 border-gray-200;
+    }
+
+    .card-box {
+    @apply border-8 border-transparent p-1 rounded-3xl;
+        &:hover {
+            @apply border-light-orange;
+        }
+    }
+    
+    .card-body {
+    @apply flex flex-col gap-y-2 rounded-xl px-6 py-4;
     }
 
 }
