@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="to" class="card-box">
+  <nuxt-link :to="to" target="_blank" class="card-box">
     <div class="card-body dark-card">
       <slot></slot>
     </div>

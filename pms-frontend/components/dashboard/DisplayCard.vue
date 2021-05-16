@@ -1,5 +1,5 @@
 <template>
-  <link-card :to="`/display/${title}`" target="_blank">
+  <link-card :to="`/display/${title}`">
     <span class="text-orange-400"
       ><v-icon name="desktop" class="h-4 w-auto" /> {{ _id }}</span
     >

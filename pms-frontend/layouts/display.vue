@@ -1,7 +1,17 @@
 <template>
-  <div class="w-screen h-screen flex flex-col">
-    <header class="display-header">
-      <h1 class="text-orange-700">Display 1</h1>
+  <div class="min-w-screen min-h-screen flex flex-col">
+    <header class="display-header text-orange-700">
+      <h1 class="">Display 1</h1>
+      <div class="space-x-2">
+        <span>
+          <v-icon name="calendar-alt" class="w-4 h-4" />
+          {{ now }}</span
+        >
+        <span>
+          <v-icon name="clock" class="w-4 h-4" />
+          {{ today }}</span
+        >
+      </div>
     </header>
     <main class="display-main"><Nuxt /></main>
     <footer class="display-footer">
@@ -12,7 +22,26 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    today() {
+      var today = new Date();
+      return (
+        today.getFullYear() +
+        "-" +
+        (today.getMonth() + 1) +
+        "-" +
+        today.getDate()
+      );
+    },
+    now() {
+      var today = new Date();
+      return (
+        today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
+      );
+    },
+  },
+};
 </script>
 
 <style>
@@ -25,7 +54,7 @@ export default {};
 }
 
 .display-main {
-  @apply w-full h-full flex flex-1;
+  @apply flex flex-1;
 }
 
 .display-footer {

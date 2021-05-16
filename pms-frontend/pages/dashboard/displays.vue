@@ -32,7 +32,7 @@ export default {
         },
         {
           _id: "2",
-          title: "time",
+          title: "map",
           desc:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, sunt!",
         },
