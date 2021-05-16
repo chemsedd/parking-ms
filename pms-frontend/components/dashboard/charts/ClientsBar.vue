@@ -1,6 +1,6 @@
 <template>
-  <card>
-    <CBar :chartData="{}" :data="barData" />
+  <card class="shadow-card">
+    <c-bar :chartData="{}" :data="barData" />
   </card>
 </template>
 

@@ -3,6 +3,7 @@
     <h3 class="col-span-3">Charts</h3>
     <CClientsBar />
     <CLotsDoughnut />
+    <CClientsLine />
   </div>
 </template>
 

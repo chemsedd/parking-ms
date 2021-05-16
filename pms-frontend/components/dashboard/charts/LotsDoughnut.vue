@@ -1,5 +1,7 @@
 <template>
-  <card><CDoughnut :chartData="{}" :data="doughnutData" /></card>
+  <card class="shadow-card">
+    <c-doughnut :chartData="{}" :data="doughnutData" />
+  </card>
 </template>
 
 <script>

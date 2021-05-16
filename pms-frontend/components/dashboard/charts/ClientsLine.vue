@@ -1,6 +1,6 @@
 <template>
-  <card>
-    <CLine :chartData="{}" :data="LineData" />
+  <card class="shadow-card">
+    <c-line :chartData="{}" :data="LineData" />
   </card>
 </template>
 
