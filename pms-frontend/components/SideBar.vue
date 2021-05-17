@@ -14,7 +14,7 @@
         src="~/assets/images/pms-logo.svg"
         alt="Parmking Management System logo"
       />
-      <h1 :class="`title ${toggle ? '' : 'text-3xl'}`">PMS</h1>
+      <h1 :class="`title ${toggle ? '' : 'hidden'}`">PMS</h1>
     </div>
     <hr class="sidebar-hr" />
     <!-- User infos (picture, name...) -->
@@ -22,7 +22,9 @@
       <img src="~/assets/images/user.jpg" alt="User image" class="user-image" />
       <div :class="`${toggle ? 'block' : 'hidden'} flex flex-col`">
         <span class="user-name"> Chems Eddine Senoussi </span>
-        <span class="text-green-700 text-sm">◉ Admin</span>
+        <span class="text-lime-400 text-sm"
+          ><span class="animate-pulse">◉</span> Admin</span
+        >
       </div>
     </div>
     <hr class="sidebar-hr" />
@@ -31,7 +33,7 @@
       <li v-for="item in menu" :key="item.label">
         <nuxt-link
           :to="{ path: item.link }"
-          class="btn sidebar-menu-btn"
+          :class="`btn sidebar-menu-btn ${toggle ? '' : 'justify-center'}`"
           append
         >
           <v-icon :name="item.icon" class="w-5 h-5" />
@@ -64,7 +66,7 @@ export default {
         },
         {
           label: "Statistics",
-          icon: "table",
+          icon: "chart-pie",
           link: "/dashboard/statistics",
         },
         {
@@ -104,7 +106,9 @@ export default {
   @apply bg-light-orange;
 }
 
-/* Title section */
+/* ------------------ */
+/*    Title section   */
+/* ------------------ */
 .title-section {
   @apply flex items-center justify-center gap-2;
 }
@@ -113,10 +117,11 @@ export default {
   font-family: "Open Sans";
   @apply text-white;
 }
+/* ------------------ */
 /* User infos */
-
+/* ------------------ */
 .user-section {
-  @apply flex items-center gap-x-2;
+  @apply flex items-center gap-x-6;
 }
 
 .user-section .user-image {
@@ -127,11 +132,15 @@ export default {
   @apply text-gray-300 font-semibold text-sm;
 }
 
+/* ------------------ */
+/*    Menu section    */
+/* ------------------ */
+
 .menu-section {
-  @apply flex flex-col justify-start gap-y-2 h-full text-white;
+  @apply flex flex-col gap-y-2 h-full text-white;
 }
 
 .sidebar-menu-btn {
-  @apply w-full h-10 flex items-center gap-x-2 text-xl hover:bg-light-orange;
+  @apply w-full h-10 flex items-center gap-x-4 text-xl border-2 border-transparent hover:border-light-orange;
 }
 </style>
