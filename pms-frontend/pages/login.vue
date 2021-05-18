@@ -26,7 +26,12 @@
             <input type="password" id="password" name="password" />
           </div>
           <div>
-            <button class="btn--primary w-full" @click.prevent="">Login</button>
+            <nuxt-link
+              to="/dashboard/"
+              class="btn--primary w-full"
+              @click.prevent=""
+              >Login</nuxt-link
+            >
           </div>
         </form>
       </div>

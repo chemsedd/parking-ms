@@ -8,7 +8,7 @@
       />
     </button>
     <!-- Title -->
-    <div :class="`title-section ${toggle ? 'flex-row' : 'flex-col'}`">
+    <div class="title-section">
       <img
         class="w-12 h-12"
         src="~/assets/images/pms-logo.svg"
@@ -62,7 +62,7 @@ export default {
         {
           label: "Home",
           icon: "home",
-          link: "/dashboard/home",
+          link: "/dashboard/",
         },
         {
           label: "Statistics",
@@ -73,6 +73,11 @@ export default {
           label: "Display",
           icon: "desktop",
           link: "/dashboard/displays",
+        },
+        {
+          label: "Profile",
+          icon: "user",
+          link: "/dashboard/profile",
         },
         {
           label: "Settings",
@@ -100,10 +105,6 @@ export default {
 .sidebar-hr {
   @apply border-light-orange border-dashed opacity-50 w-full;
   opacity: 45%;
-}
-
-.nuxt-link-active {
-  @apply bg-light-orange;
 }
 
 /* ------------------ */
@@ -141,6 +142,13 @@ export default {
 }
 
 .sidebar-menu-btn {
-  @apply w-full h-10 flex items-center gap-x-4 text-xl border-2 border-transparent hover:border-light-orange;
+  @apply w-full h-10 flex items-center gap-x-4 text-xl border-2 border-transparent;
+  &:hover:not(.nuxt-link-exact-active) {
+    @apply bg-light-orange bg-opacity-25;
+  }
+}
+
+.nuxt-link-exact-active {
+  @apply bg-light-orange;
 }
 </style>

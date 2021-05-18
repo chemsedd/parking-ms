@@ -7,14 +7,14 @@
       <db-lots-card class="shadow-card" />
       <h3 class="col-span-3">Table data</h3>
       <div class="col-span-3">
-        <!-- api-url="https://vuetable.ratiw.net/api/users" -->
+        <!-- api-url="https://vuetable.ratiw.net/api/users"
         <vuetable
           ref="vuetable"
           :fields="fields"
           :api-mode="false"
           :data="users"
         >
-        </vuetable>
+        </vuetable> -->
       </div>
     </div>
   </main>

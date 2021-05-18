@@ -1,7 +1,7 @@
 <template>
   <main class="main-section">
     <div class="secondary-section">
-      <h3 class="col-span-3">Settings</h3>
+      <h3 class="col-span-3">Profile</h3>
     </div>
   </main>
 </template>
@@ -10,7 +10,7 @@
 export default {
   head() {
     return {
-      title: "Settings",
+      title: "Profile",
     };
   },
   layout: "dashboard",
