@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from .models import Lot
+from .models import Lot, Vehicle
 from rest_framework import serializers
 
 
@@ -15,3 +15,9 @@ class LotSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Lot
         fields = ['_id', 'section', 'veh_type', 'status']
+
+
+class VehicleSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Vehicle
+        fields = ['_id', '_type', 'owner']

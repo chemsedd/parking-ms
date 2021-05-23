@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from django.contrib.auth.models import User
-from .models import Lot
-from .serializers import UserSerializer, LotSerializer
+from .models import Lot, Vehicle
+from .serializers import UserSerializer, LotSerializer, VehicleSerializer
 # Create your views here.
 
 
@@ -16,3 +16,9 @@ class UserViewSet(viewsets.ModelViewSet):
 class LotViewSet(viewsets.ModelViewSet):
     queryset = Lot.objects.all()
     serializer_class = LotSerializer
+
+
+#
+class VehicleViewSet(viewsets.ModelViewSet):
+    queryset = Vehicle.objects.all()
+    serializer_class = VehicleSerializer
