@@ -72,6 +72,26 @@ export default {
       ],
     };
   },
+  methods: {
+    async getData() {
+      // Optionally the request above could also be done as
+      await this.$axios
+        .get("http://localhost:8000/lots/", {
+          params: {
+            format: "json",
+          },
+        })
+        .then(function (response) {
+          console.log(response.data);
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+        .then(function () {
+          console.log("Data fetched successfully!");
+        });
+    },
+  },
 };
 </script>
 
